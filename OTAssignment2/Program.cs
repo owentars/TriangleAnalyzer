@@ -25,12 +25,12 @@ namespace OTAssignment2
                 userInput = Console.ReadLine();
                 if (userInput == "1")
                 {
-                    triangleDimensions();
+                    TriangleDimensions();
                 }
             }
         }
 
-        private static void triangleDimensions()
+        private static void TriangleDimensions()
         {
             Console.Write("Input first number: ");
             string a = Console.ReadLine();
@@ -38,6 +38,29 @@ namespace OTAssignment2
             string b = Console.ReadLine();
             Console.Write("Input third number: ");
             string c = Console.ReadLine();
+
+            ParseInput(a, b, c);
+        }
+
+        private static void ParseInput(string a, string b, string c)
+        {
+            try
+            {
+                int sideA = int.Parse(a);
+                int sideB = int.Parse(b);
+                int sideC = int.Parse(c);
+
+                if (sideA < 0 || sideB < 0 || sideC < 0)
+                {
+                    Console.WriteLine("Please enter only positive digits!");
+                    TriangleDimensions();
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Please enter only positive digits!");
+                TriangleDimensions();
+            }
         }
     }
 }
