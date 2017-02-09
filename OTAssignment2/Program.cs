@@ -44,11 +44,14 @@ namespace OTAssignment2
 
         private static void ParseInput(string a, string b, string c)
         {
+            int sideA = 0;
+            int sideB = 0;
+            int sideC = 0;
             try
             {
-                int sideA = int.Parse(a);
-                int sideB = int.Parse(b);
-                int sideC = int.Parse(c);
+                sideA = int.Parse(a);
+                sideB = int.Parse(b);
+                sideC = int.Parse(c);
 
                 if (sideA < 0 || sideB < 0 || sideC < 0)
                 {
@@ -61,6 +64,8 @@ namespace OTAssignment2
                 Console.WriteLine("Please enter only positive digits!");
                 TriangleDimensions();
             }
+
+            Console.WriteLine("\n" + TriangleSolver.Analyze(sideA, sideB, sideC));
         }
     }
 }
