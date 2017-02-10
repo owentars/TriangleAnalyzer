@@ -13,6 +13,9 @@ namespace OTAssignment2
             StartMenu();
         }
 
+        /// <summary>
+        /// StartMenu method which directs user on how to use program.
+        /// </summary>
         private static void StartMenu()
         {
             string userInput = "";
@@ -30,6 +33,9 @@ namespace OTAssignment2
             }
         }
 
+        /// <summary>
+        /// Called in StartMenu method, gets three user inputs for triangle dimension
+        /// </summary>
         private static void TriangleDimensions()
         {
             Console.Write("Input first number: ");
@@ -42,6 +48,12 @@ namespace OTAssignment2
             ParseInput(a, b, c);
         }
 
+        /// <summary>
+        /// Error handling for triangle dimensions
+        /// </summary>
+        /// <param name="a">User input for side A</param>
+        /// <param name="b">User input for side B</param>
+        /// <param name="c">User input for side C</param>
         private static void ParseInput(string a, string b, string c)
         {
             int sideA = 0;

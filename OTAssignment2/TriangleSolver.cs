@@ -8,34 +8,37 @@ namespace OTAssignment2
 {
     public static class TriangleSolver
     {
-        public static string triangleType;
+        /// <summary>
+        /// Analyzes data to see if given data is a triangle, if so what kind of triangle it is.
+        /// </summary>
+        /// <param name="sideA">parsed user input for side A</param>
+        /// <param name="sideB">parsed user input for side B</param>
+        /// <param name="sideC">parsed user input for side C</param>
+        /// <returns></returns>
         public static string Analyze(int sideA, int sideB, int sideC)
         {
             string analyzeOutput = "";
-            triangleType = "";
-            string isTriangle = "";
+
             if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA)
             {
-                isTriangle = "These digits do form a triangle. ";
+                analyzeOutput += "These digits do form a triangle. ";
                 if (sideA != sideB && sideA != sideC && sideB != sideC)
                 {
-                    triangleType = "Type of: Scalene\n";
+                    analyzeOutput += "Type of: Scalene\n";
                 }
                 else if (sideA == sideB && sideB == sideC)
                 {
-                    triangleType = "Type of: Equilateral\n";
+                    analyzeOutput += "Type of: Equilateral\n";
                 }
                 else if (sideA == sideB || sideA == sideC || sideB == sideC)
                 {
-                    triangleType = "Type of: Isosceles.\n";
+                    analyzeOutput += "Type of: Isosceles.\n";
                 }
             }
             else
             {
-                isTriangle = "These digits do not form a triangle\n";
+                analyzeOutput += "These digits do not form a triangle\n";
             }
-
-            analyzeOutput = isTriangle + triangleType;
 
             return analyzeOutput;
         }
